@@ -1,0 +1,861 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--
+    This section defines project-level properties.
+
+    AssemblyName
+      Name of the output assembly.
+    Configuration
+      Specifies a default value for debug.
+    OutputType
+      Must be "Library" for VSTO.
+    Platform
+      Specifies what CPU the output of this project can run on.
+    NoStandardLibraries
+      Set to "false" for VSTO.
+    RootNamespace
+      In C#, this specifies the namespace given to new files. In VB, all objects are
+      wrapped in this namespace at runtime.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6B547D8-B27F-4500-AC83-3093EA577530}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>xSAPtorExcel</RootNamespace>
+    <AssemblyName>xSAPtorExcel</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <DefineConstants>VSTO40</DefineConstants>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>C:\Temp\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>en</TargetCulture>
+    <ApplicationVersion>1.1.0.001</ApplicationVersion>
+    <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateInterval>0</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <ProductName>xSAPtorExcel</ProductName>
+    <PublisherName />
+    <SupportUrl />
+    <FriendlyName>xSAPtorExcel</FriendlyName>
+    <OfficeApplicationDescription />
+    <LoadBehavior>3</LoadBehavior>
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <!--
+      OfficeApplication
+        Add-in host application
+    -->
+    <OfficeApplication>Excel</OfficeApplication>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Debug" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>$(DefineConstants)</DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>xSAPtorExcel.xml</DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Release" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>xSAPtorExcel.xml</DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <!--
+    This section specifies references for the project.
+  -->
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <!-- Visual Basic supports importing namespaces (equivalent to "using" statements in C#). -->
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Text" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="Office = Microsoft.Office.Core" />
+    <Import Include="Excel = Microsoft.Office.Interop.Excel" />
+    <Import Include="Microsoft.Office.Tools.Excel" />
+  </ItemGroup>
+  <!--
+    This section defines the user source files that are part of the project.
+     
+    A "Compile" element specifies a source file to compile.
+    An "EmbeddedResource" element specifies an .resx file for embedded resources.
+    A "None" element specifies a file that is not to be passed to the compiler (for instance, 
+    a text file or XML file).
+    The "AppDesigner" element specifies the directory where the application properties files
+    can be found.
+  -->
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="Settings.vb" />
+    <Compile Include="xSAPtor Services\Helpers\ExcelAddress.vb" />
+    <Compile Include="xSAPtor Services\Helpers\ExcelHelper.vb" />
+    <Compile Include="xSAPtor Services\Helpers\iExcelHelper.vb" />
+    <Compile Include="xSAPtor Services\Helpers\Model\Excel\ExcelWSProfileDTO.vb" />
+    <Compile Include="xSAPtor Services\Helpers\Model\Excel\iExcelWSProfileDTO.vb" />
+    <Compile Include="xSAPtor Services\Helpers\Model\MDI\ExcelMDIWBookDTO.vb" />
+    <Compile Include="xSAPtor Services\Helpers\Model\MDI\ExcelMDIWSheetDTO.vb" />
+    <Compile Include="xSAPtor Services\Helpers\Model\MDI\iExcelMDIWBookDTO.vb" />
+    <Compile Include="xSAPtor Services\Helpers\Model\MDI\iExcelMDIWSheetDTO.vb" />
+    <Compile Include="xSAPtor Services\Helpers\WSServices.vb" />
+    <Compile Include="xSAPtor Services\Utilities\ConcurrentCollections\xConcurrentCircularQueue.vb" />
+    <Compile Include="xSAPtor Services\Utilities\DataGridView\xDGVImageButtonActionColumn.vb" />
+    <Compile Include="xSAPtor Services\Utilities\Generic\iServicesGeneric.vb" />
+    <Compile Include="xSAPtor Services\Utilities\Generic\ServicesGeneric.vb" />
+    <Compile Include="xSAPtor Services\Utilities\MessageHub\iSubscription.vb" />
+    <Compile Include="xSAPtor Services\Utilities\MessageHub\MsgHubCmd.vb" />
+    <Compile Include="xSAPtor Services\Utilities\MessageHub\xMsgStructures.vb" />
+    <Compile Include="xSAPtor Services\Utilities\MessageHub\Subscription.vb" />
+    <Compile Include="xSAPtor Services\Utilities\MessageHub\iMsgHub.vb" />
+    <Compile Include="xSAPtor Services\Utilities\MessageHub\MsgHub.vb" />
+    <Compile Include="xSAPtor Services\Utilities\TreeView\xTreeviewFlatten.vb" />
+    <Compile Include="xSAPtor\Main\BxSMainShared.vb" />
+    <Compile Include="xSAPtor\Processing\zSelection\ViewModel\zProcessSelectionCommands.vb" />
+    <Compile Include="xSAPtor\zAbout - Help\View\AboutBox1.Designer.vb">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zAbout - Help\View\AboutBox1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zAbout - Help\View\SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zAbout - Help\View\SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\GUI\SAPGUI - XML\Model\iSapGuiXmlModel.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\SAPGUI - XML\ViewModel\iSapGuiXmlVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\SAPGUI - XML\Model\SAPGuiXmlModel.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\SAPGUI - XML\View\SapGuiXmlView.Designer.vb">
+      <DependentUpon>SapGuiXmlView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\GUI\SAPGUI - XML\View\SapGuiXmlView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\GUI\SAPGUI - XML\ViewModel\SapGuiXmlVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\DTO\iSysReposDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\DTO\SysReposDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\DTO\iSysReposUserDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\DTO\iSysReposClientDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\DTO\iSysReposSystemDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\DTO\SysReposSystemDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\DTO\SysReposClientDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\DTO\SysReposUserDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\iLogonSystemsModel.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\Main\ViewModel\iLogonGUIVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\Main\ViewModel\LogonGUIVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCConnection\Model\DTO\LogonConnReposDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCConnection\Model\DTO\iLogonConnReposDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCConnection\Model\iLogonConnectionModel.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCConnection\Model\LogonConnReposXML.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCConnection\Model\LogonConnectionModel.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\LogonSystemsModel.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionConfig\Model\LogonConnConfigDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionConfig\Model\iLogonConnConfigDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionConfig\ViewModel\iLogonConnConfigVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionConfig\ViewModel\LogonConnConfigVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionSetup\Model\LogonConnSetupXML.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionSetup\Model\iLogonConnSetupModel.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionSetup\Model\LogonConnSetupModel.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionSetup\ViewModel\iLogonConnSetupVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionSetup\ViewModel\LogonConnSetupVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\ViewModel\iUCParametersVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\ViewModel\UCParametersVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCConnection\ViewModel\UCConnectionVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCConnection\ViewModel\iUCConnectionVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCConnection\Model\DTO\iLogonConnectionDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCConnection\Model\DTO\LogonConnectionDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionSetup\Model\LogonConnSetupDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionSetup\Model\iLogonConnSetupDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zOptions\Model\LogonOptionsXML.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zOptions\Model\LogonOptionsModel.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zOptions\Model\iLogonOptionsModel.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zOptions\ViewModel\iLogonOptionsVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zOptions\ViewModel\LogonOptionsVM.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCConnection\View\UCConnectionView.Designer.vb">
+      <DependentUpon>UCConnectionView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCConnection\View\UCConnectionView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionSetup\View\LogonConnSetupView.Designer.vb">
+      <DependentUpon>LogonConnSetupView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionSetup\View\LogonConnSetupView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zSession\Views\SAPSessionPwrd.Designer.vb">
+      <DependentUpon>SAPSessionPwrd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zSession\Views\SAPSessionPwrd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\_UI\Notification\Log\Model\iNotificationLogModel.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Log\Model\NotificationLogModel.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Log\ViewModel\iNotificationLogVM.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Log\ViewModel\NotificationLogVM.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Icon\Model\iNotificationMessageDTO.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Options\Model\iNotifyOptionsDTO.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Options\Model\iNotifyOptionsModel.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Icon\Model\NotificationMessageDTO.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Options\Model\NotifyOptionsXML.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Options\Model\NotifyOptionsDTO.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Options\Model\NotifyOptionsModel.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Icon\ViewModel\NotificationIconVM.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Icon\ViewModel\iNotificationIconVM.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Options\ViewModel\iNotifcationOptionsVM.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Options\ViewModel\NotifcationOptionsVM.vb" />
+    <Compile Include="xSAPtor\_UI\Notification\Log\View\NotificationLogView.Designer.vb">
+      <DependentUpon>NotificationLogView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\_UI\Notification\Log\View\NotificationLogView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\_UI\Notification\Icon\View\NotificationIconView.Designer.vb">
+      <DependentUpon>NotificationIconView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\_UI\Notification\Icon\View\NotificationIconView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\_UI\Notification\Options\View\NotificationOptionsView.Designer.vb">
+      <DependentUpon>NotificationOptionsView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\_UI\Notification\Options\View\NotificationOptionsView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\Processing\aController\iBxSProcessController.vb" />
+    <Compile Include="xSAPtor\Processing\aController\BxSProcessController.vb" />
+    <Compile Include="xSAPtor\Processing\axRunnerViaTest\BxSRunnerViaTest.vb" />
+    <Compile Include="xSAPtor\Processing\axRunnerViaTest\iBxSRunnerViaTest.vb" />
+    <Compile Include="xSAPtor\Processing\axRunnerViaZDTON\BxSRunnerViaZDTON.vb" />
+    <Compile Include="xSAPtor\Processing\axRunnerViaZDTON\iBxSRunnerViaZDTON.vb" />
+    <Compile Include="xSAPtor\Processing\zSelection\Model\ixProcessSelectionDTO.vb" />
+    <Compile Include="xSAPtor\Processing\zSelection\Model\ixProcessSelectionModel.vb" />
+    <Compile Include="xSAPtor\Processing\zSelection\Model\xProcessSelectionDTO.vb" />
+    <Compile Include="xSAPtor\Processing\zSelection\Model\xProcessSelectionModel.vb" />
+    <Compile Include="xSAPtor\Processing\zSelection\ViewModel\ixProcessSelectionVM.vb" />
+    <Compile Include="xSAPtor\Processing\zSelection\ViewModel\xProcessSelectionVM.vb" />
+    <Compile Include="xSAPtor\Processing\zSelection\View\xProcessSelectionView.Designer.vb">
+      <DependentUpon>xProcessSelectionView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\Processing\zSelection\View\xProcessSelectionView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\Processing\zOptions\Model\ixProcessOptionsModel.vb" />
+    <Compile Include="xSAPtor\Processing\zOptions\Model\xProcessOptionsModel.vb" />
+    <Compile Include="xSAPtor\Processing\axRunMonitor\Model\ixProcessRunMonitorDTO.vb" />
+    <Compile Include="xSAPtor\Processing\axRunMonitor\Model\xProcessRunMonitorDTO.vb" />
+    <Compile Include="xSAPtor\Processing\axRunner\Controller\ixProcessRunnerController.vb" />
+    <Compile Include="xSAPtor\Processing\zOptions\Model\ixProcessOptionsDTO.vb" />
+    <Compile Include="xSAPtor\Processing\zOptions\Model\xProcessOptionsDTO.vb" />
+    <Compile Include="xSAPtor\Processing\zOptions\ViewModel\ixProcessOptionsVM.vb" />
+    <Compile Include="xSAPtor\Processing\zOptions\ViewModel\xProcessOptionsVM.vb" />
+    <Compile Include="xSAPtor\Processing\axRunMonitor\ViewModel\ixProcessRunMonitorViewModel.vb" />
+    <Compile Include="xSAPtor Services\Utilities\DataGridView\xDGVImageButtonActionCell.vb" />
+    <Compile Include="xSAPtor Services\Utilities\DataGridView\xDGVImageButtonCell.vb" />
+    <Compile Include="xSAPtor\Processing\aCommon\ixProcessRequestDTO.vb" />
+    <Compile Include="xSAPtor\Processing\aCommon\xProcessRequestDTO.vb" />
+    <Compile Include="xSAPtor\Processing\axRunMonitor\Views\ixProcessRunMonitorView.vb" />
+    <Compile Include="xSAPtor\Processing\zOptions\View\ixProcessOptionsView.vb" />
+    <Compile Include="xSAPtor\Processing\zOptions\View\xProcessOptionsView.Designer.vb">
+      <DependentUpon>xProcessOptionsView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\Processing\zOptions\View\xProcessOptionsView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor Services\Utilities\DataGridView\xDGVProgressCell.vb" />
+    <Compile Include="xSAPtor Services\Utilities\DataGridView\xDGVProgressColumn.vb" />
+    <Compile Include="xSAPtor\Processing\axRunMonitor\Views\xProcessRunMonitorView.Designer.vb">
+      <DependentUpon>xProcessRunMonitorView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\Processing\axRunMonitor\Views\xProcessRunMonitorView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\Processing\Work Sheet\BDCWSData.vb" />
+    <Compile Include="xSAPtor\Processing\Work Sheet\BDCWSHeader.vb" />
+    <Compile Include="xSAPtor\Processing\Work Sheet\BDCWSProfile.vb" />
+    <Compile Include="xSAPtor\Processing\Work Sheet\iBDCWSData.vb" />
+    <Compile Include="xSAPtor\Processing\Work Sheet\iBDCWSHeader.vb" />
+    <Compile Include="xSAPtor\Processing\Work Sheet\iBDCWSProfile.vb" />
+    <Compile Include="xSAPtor\xExcel Domain\Worksheet Handling\BDC DataSheet\BDCConfiguration.vb" />
+    <Compile Include="xSAPtor\xExcel Domain\Worksheet Handling\BDC DataSheet\BDCDataSheet.vb" />
+    <Compile Include="xSAPtor\xExcel Domain\Worksheet Handling\BDC DataSheet\BDCXMLConfig.vb" />
+    <Compile Include="xSAPtor\xExcel Domain\Worksheet Handling\BDC DataSheet\iBDCConfiguration.vb" />
+    <Compile Include="xSAPtor\xExcel Domain\Worksheet Handling\BDC DataSheet\iBDCDataSheet.vb" />
+    <Compile Include="xSAPtor\zAbout - Help\View\ixSAPtorNCOAbout.vb" />
+    <Compile Include="xSAPtor\zAbout - Help\View\ixSAPtorAbout.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\Controller\ixSAPLogonController.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\Controller\xSAPLogonController.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\DTO\LogonSystemDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\DTO\iLogonSystemDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionConfig\View\LogonConnConfigView.Designer.vb">
+      <DependentUpon>LogonConnConfigView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\zConnectionConfig\View\LogonConnConfigView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\GUI\Main\View\LogonGUIView.Designer.vb">
+      <DependentUpon>LogonGUIView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\GUI\Main\View\LogonGUIView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\zOptions\View\LogonOptionsView.Designer.vb">
+      <DependentUpon>LogonOptionsView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\zOptions\View\LogonOptionsView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\View\UCParametersView.Designer.vb">
+      <DependentUpon>UCParametersView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\View\UCParametersView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zServices\Controller\ixServicesController.vb" />
+    <Compile Include="xSAPtor\zServices\Controller\xServicesController.vb" />
+    <Compile Include="xSAPtor\zServices\SAP Monitor\Model\ixSAPDestMonitorDTO.vb" />
+    <Compile Include="xSAPtor\zServices\SAP Monitor\Model\ixSAPDestMonitorModel.vb" />
+    <Compile Include="xSAPtor\zServices\SAP Monitor\Model\ixSAPDestMonOptionsDTO.vb" />
+    <Compile Include="xSAPtor\zServices\SAP Monitor\Model\xSAPDestMonitorDTO.vb" />
+    <Compile Include="xSAPtor\zServices\SAP Monitor\Model\xSAPDestMonitorModel.vb" />
+    <Compile Include="xSAPtor\zServices\SAP Monitor\Model\xSAPDestMonOptionsDTO.vb" />
+    <Compile Include="xSAPtor\zServices\SAP Monitor\ViewModel\ixSAPDestMonitorViewModel.vb" />
+    <Compile Include="xSAPtor\zServices\SAP Monitor\ViewModel\xSAPDestMonitorViewModel.vb" />
+    <Compile Include="xSAPtor\zServices\SAP Monitor\View\ixSAPConnectionMonitorView.vb" />
+    <Compile Include="xSAPtor\zServices\SAP Monitor\View\xSAPConnectionMonitorView.Designer.vb">
+      <DependentUpon>xSAPConnectionMonitorView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zServices\SAP Monitor\View\xSAPConnectionMonitorView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zSession\Model\Selection\iSessionSelectionDTO.vb" />
+    <Compile Include="xSAPtor\zSession\Model\Options\iSessionOptionsDTO.vb" />
+    <Compile Include="xSAPtor\zSession\Model\Options\SessionOptionsDTO.vb" />
+    <Compile Include="xSAPtor\zSession\Model\Selection\SessionSelectionDTO.vb" />
+    <Compile Include="xSAPtor\zAbout - Help\Controller\ixSAPAboutController.vb" />
+    <Compile Include="xSAPtor\zAbout - Help\Controller\xSAPAboutController.vb" />
+    <Compile Include="xSAPtor\zAbout - Help\View\xSAPtorAbout.Designer.vb">
+      <DependentUpon>xSAPtorAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zAbout - Help\View\xSAPtorAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zAbout - Help\View\xSAPtorNCOSplash.Designer.vb">
+      <DependentUpon>xSAPtorNCOSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zAbout - Help\View\xSAPtorNCOSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zSAPLogon\zOptions\Model\iLogonOptionsDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\zOptions\Model\LogonOptionsDTO.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\ModelView\xSAPLogonSysIDEventArgs.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\ModelView\xSAPLogonUserEventArgs.vb" />
+    <Compile Include="xSAPtor Services\Helpers\iExcelAddress.vb" />
+    <Compile Include="xSAPtor Services\Progress Reporting\iPBarData.vb" />
+    <Compile Include="xSAPtor\_UI\SAPLogonFavourites\Model\iSAPFavoritesModel.vb" />
+    <Compile Include="xSAPtor\_UI\SAPLogonFavourites\Model\iSAPFavoriteDTO.vb" />
+    <Compile Include="xSAPtor\_UI\SAPLogonFavourites\Model\SAPFavoritesModel.vb" />
+    <Compile Include="xSAPtor\_UI\SAPLogonFavourites\Model\SAPFavoritesXML.vb" />
+    <Compile Include="xSAPtor\_UI\SAPLogonFavourites\Model\SAPFavoriteDTO.vb" />
+    <Compile Include="xSAPtor\_UI\Ribbon\xSAPtorRB.Designer.vb">
+      <DependentUpon>xSAPtorRB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\_UI\Ribbon\xSAPtorRB.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="xSAPtor Services\Progress Reporting\PBarData.vb" />
+    <Compile Include="xSAPtor Services\Workbook Close Handler\iWBookCloseEventArgs.vb" />
+    <Compile Include="xSAPtor Services\Workbook Close Handler\iWBookCloseHandler.vb" />
+    <Compile Include="xSAPtor Services\Workbook Close Handler\WBookCloseEventArgs.vb" />
+    <Compile Include="xSAPtor Services\Workbook Close Handler\WBookCloseRequest.vb" />
+    <Compile Include="xSAPtor Services\Workbook Close Handler\WBookCloseHandler.vb" />
+    <Compile Include="ThisAddIn.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zAbout - Help\Model\ixSAPAboutInfo.vb" />
+    <Compile Include="xSAPtor\zAbout - Help\Model\xSAPAboutInfo.vb" />
+    <Compile Include="xSAPtor Services\Helpers\BxSEnv.vb" />
+    <Compile Include="xSAPtor Services\Helpers\iBxSEnv.vb" />
+    <Compile Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\LogonSystemsXML.vb" />
+    <Compile Include="xSAPtor\xExcel Domain\Work Sheet Objects\ExcelRow.vb" />
+    <Compile Include="xSAPtor\xExcel Domain\Work Sheet Objects\iExcelRow.vb" />
+    <Compile Include="xSAPtor\xExcel Domain\Work Sheet Objects\ExcelColumn.vb" />
+    <Compile Include="xSAPtor\xExcel Domain\Work Sheet Objects\xBDC_TypePool.vb" />
+    <Compile Include="xSAPtor\xExcel Domain\Work Sheet Objects\iExcelColumn.vb" />
+    <Compile Include="xSAPtor Services\Helpers\iWSServices.vb" />
+    <Compile Include="xSAPtor\Main\Controller\iBxSMainController.vb" />
+    <Compile Include="xSAPtor\Main\Controller\BxSMainController.vb" />
+    <Compile Include="xSAPtor\zSession\Controller\ixSessionController.vb" />
+    <Compile Include="xSAPtor\zSession\Model\Request\iSessionCreateRequest.vb" />
+    <Compile Include="xSAPtor\zSession\ViewModel\ProducerConsumer\iSessionRequestConsumer.vb" />
+    <Compile Include="xSAPtor\zSession\ViewModel\ProducerConsumer\iSessionWSPipeLineController.vb" />
+    <Compile Include="xSAPtor\zSession\Model\Request\SessionCreateRequest.vb" />
+    <Compile Include="xSAPtor\zSession\ViewModel\ProducerConsumer\SessionRequestConsumer.vb" />
+    <Compile Include="xSAPtor\zSession\ViewModel\ProducerConsumer\SessionWSPipeLineController.vb" />
+    <Compile Include="xSAPtor\zSession\Controller\xSessionController.vb" />
+    <Compile Include="xSAPtor\zSession\Views\ixSAPSessionConfig.vb" />
+    <Compile Include="xSAPtor\zSession\Views\ixSAPSessionOptions.vb" />
+    <Compile Include="xSAPtor\zSession\Views\ixSAPSessions.vb" />
+    <Compile Include="xSAPtor\zSession\Views\xSAPBDCConfig.Designer.vb">
+      <DependentUpon>xSAPBDCConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zSession\Views\xSAPBDCConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zSession\Views\xSAPSessionOptions.Designer.vb">
+      <DependentUpon>xSAPSessionOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zSession\Views\xSAPSessionOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\zSession\Views\xSAPSessions.Designer.vb">
+      <DependentUpon>xSAPSessions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="xSAPtor\zSession\Views\xSAPSessions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xSAPtor\_UI\SAPLogonFavourites\ViewModel\SAPFavoritesVM.vb" />
+    <Compile Include="xSAPtor\_UI\SAPLogonFavourites\ViewModel\iSAPFavoritesVM.vb" />
+    <EmbeddedResource Include="xSAPtor\zAbout - Help\View\AboutBox1.resx">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zAbout - Help\View\SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zSAPLogon\GUI\SAPGUI - XML\View\SapGuiXmlView.resx">
+      <DependentUpon>SapGuiXmlView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zSAPLogon\GUI\UCConnection\View\UCConnectionView.resx">
+      <DependentUpon>UCConnectionView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zSAPLogon\zConnectionSetup\View\LogonConnSetupView.resx">
+      <DependentUpon>LogonConnSetupView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zSession\Views\SAPSessionPwrd.resx">
+      <DependentUpon>SAPSessionPwrd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\_UI\Notification\Log\View\NotificationLogView.resx">
+      <DependentUpon>NotificationLogView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\_UI\Notification\Icon\View\NotificationIconView.resx">
+      <DependentUpon>NotificationIconView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\_UI\Notification\Options\View\NotificationOptionsView.resx">
+      <DependentUpon>NotificationOptionsView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\Processing\zSelection\View\xProcessSelectionView.resx">
+      <DependentUpon>xProcessSelectionView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\Processing\zOptions\View\xProcessOptionsView.resx">
+      <DependentUpon>xProcessOptionsView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\Processing\axRunMonitor\Views\xProcessRunMonitorView.resx">
+      <DependentUpon>xProcessRunMonitorView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zAbout - Help\View\xSAPtorAbout.resx">
+      <DependentUpon>xSAPtorAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zAbout - Help\View\xSAPtorNCOSplash.resx">
+      <DependentUpon>xSAPtorNCOSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\_UI\Ribbon\xSAPtorRB.resx">
+      <DependentUpon>xSAPtorRB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zSAPLogon\zConnectionConfig\View\LogonConnConfigView.resx">
+      <DependentUpon>LogonConnConfigView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zSAPLogon\GUI\Main\View\LogonGUIView.resx">
+      <DependentUpon>LogonGUIView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zSAPLogon\zOptions\View\LogonOptionsView.resx">
+      <DependentUpon>LogonOptionsView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zSAPLogon\GUI\UCParameters\View\UCParametersView.resx">
+      <DependentUpon>UCParametersView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zServices\SAP Monitor\View\xSAPConnectionMonitorView.resx">
+      <DependentUpon>xSAPConnectionMonitorView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zSession\Views\xSAPBDCConfig.resx">
+      <DependentUpon>xSAPBDCConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zSession\Views\xSAPSessionOptions.resx">
+      <DependentUpon>xSAPSessionOptions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xSAPtor\zSession\Views\xSAPSessions.resx">
+      <DependentUpon>xSAPSessions.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="My Project\DataSources\xSAPtorExcel.Main.Process.Options.ixProcessOptionsDTO.datasource" />
+    <None Include="My Project\DataSources\xSAPtorExcel.Main.SAPLogon.UCParametersVM.datasource" />
+    <None Include="My Project\DataSources\xSAPtorExcel.SAP.iSAPBDCSessionManager.datasource" />
+    <None Include="My Project\DataSources\xSAPtorExcel.Services.UI.iPBarData.datasource" />
+    <None Include="My Project\DataSources\xSAPtorExcel.Services.UI.PBarData.datasource" />
+    <None Include="My Project\DataSources\xSAPtorExcel.UI.Dialogs.Logon.iSAPLogonOptions.datasource" />
+    <None Include="My Project\DataSources\xSAPtorSessions.datasource" />
+    <None Include="ThisAddIn.Designer.xml">
+      <DependentUpon>ThisAddIn.vb</DependentUpon>
+    </None>
+    <Compile Include="ThisAddIn.Designer.vb">
+      <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="xSAPtorExcel_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registry.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Revert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Synchronize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BxS\BxS\BxSNCO.vbproj">
+      <Project>{7b76e0ee-42e1-413d-bd3d-12faf0b39e6c}</Project>
+      <Name>BxSNCO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pantone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LAB color model.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HSL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Select gpadient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Show.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wrong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bitmap editor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Erase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Archived Stuff\zConfig\" />
+    <Folder Include="xSAPtor Services\Customer Task Pane Handler\" />
+    <Folder Include="xSAPtor\Processing\axRunner\Message Handler\" />
+    <Folder Include="xSAPtor\Processing\axRunner\Model\" />
+    <Folder Include="xSAPtor\Processing\axRunner\Pipe Line\" />
+    <Folder Include="xSAPtor\Processing\axViaGUI\" />
+    <Folder Include="xSAPtor\Processing\Model\BDCTransaction\" />
+    <Folder Include="xSAPtor\Processing\Views\" />
+    <Folder Include="xSAPtor\Processing\xStuff\" />
+    <Folder Include="xSAPtor\zSAPLogon\GUI\UCParameters\Model\DTO\Not Used\" />
+    <Folder Include="xSAPtor\zzUnused\Session\" />
+    <Folder Include="xSAPtor\zzUnused\User Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spiral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Target1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pinion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disconnect-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\l_s_tl_g.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SAP-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Color balance.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Color balance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000px-SAP_2011_logo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SAP_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SAP_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Target.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="xSAPtor Services\External Files\gsskrb5.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="xSAPtor Services\External Files\gx64krb5.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>xSAPtorExcel_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E146CA7ACDE0CEFC6DF83048F8A8B3EB38A5D7EB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <!-- Include the build rules for a Visual Basic project. -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- Include additional build rules for an Office application add-in. -->
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- This section defines VSTO properties that describe the host-changeable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="vb" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{DCFE8D25-4715-4C33-9EAB-A34A9EBC9544}" />
+        <Host Name="Excel" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.vb" CanonicalName="AddIn" PublishedHash="961F141A33684F464437421CF873654595BB83F2" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.vb" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

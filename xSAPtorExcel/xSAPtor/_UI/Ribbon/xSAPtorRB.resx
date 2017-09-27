@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="xbtn_SAPSelect.Label" xml:space="preserve">
+    <value>Logon</value>
+  </data>
+  <data name="xbtn_SAPSelect.Tag" xml:space="preserve">
+    <value>xtag_SelectSAP</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPSelect.Name" xml:space="preserve">
+    <value>xbtn_SAPSelect</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPSelect.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPSelect.Parent" xml:space="preserve">
+    <value>xGrp_SAP</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPSelect.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="xddn_SAPFavourites.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="xbtn_SAPFavDel.Label" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="xbtn_SAPFavDel.ScreenTip" xml:space="preserve">
+    <value>Delete selected entry</value>
+  </data>
+  <data name="xbtn_SAPFavDel.Tag" xml:space="preserve">
+    <value>xtag_SAPFavDel</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPFavDel.Name" xml:space="preserve">
+    <value>xbtn_SAPFavDel</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPFavDel.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xbtn_SAPFavClr.Label" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="xbtn_SAPFavClr.ScreenTip" xml:space="preserve">
+    <value>Clear all entries</value>
+  </data>
+  <data name="xbtn_SAPFavClr.Tag" xml:space="preserve">
+    <value>xtag_SAPFavClr</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPFavClr.Name" xml:space="preserve">
+    <value>xbtn_SAPFavClr</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPFavClr.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xddn_SAPFavourites.Label" xml:space="preserve">
+    <value>SAP Favourites</value>
+  </data>
+  <data name="xddn_SAPFavourites.ScreenTip" xml:space="preserve">
+    <value>Favourites</value>
+  </data>
+  <data name="xddn_SAPFavourites.Tag" xml:space="preserve">
+    <value>xtag_FavouritesSAP</value>
+  </data>
+  <data name="&gt;&gt;xddn_SAPFavourites.Name" xml:space="preserve">
+    <value>xddn_SAPFavourites</value>
+  </data>
+  <data name="&gt;&gt;xddn_SAPFavourites.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.DropDownView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xddn_SAPFavourites.Parent" xml:space="preserve">
+    <value>xGrp_SAP</value>
+  </data>
+  <data name="&gt;&gt;xddn_SAPFavourites.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="xbtn_SAPConnect.Label" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="xbtn_SAPConnect.ScreenTip" xml:space="preserve">
+    <value>Connect/Disconnect SAP</value>
+  </data>
+  <data name="xbtn_SAPConnect.Tag" xml:space="preserve">
+    <value>xtag_SAPConnect</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPConnect.Name" xml:space="preserve">
+    <value>xbtn_SAPConnect</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPConnect.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPConnect.Parent" xml:space="preserve">
+    <value>xGrp_SAP</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPConnect.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="xGrp_SAP.Label" xml:space="preserve">
+    <value>SAP</value>
+  </data>
+  <data name="&gt;&gt;xGrp_SAP.Name" xml:space="preserve">
+    <value>xGrp_SAP</value>
+  </data>
+  <data name="&gt;&gt;xGrp_SAP.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xGrp_SAP.Parent" xml:space="preserve">
+    <value>xTab_SAPtor</value>
+  </data>
+  <data name="&gt;&gt;xGrp_SAP.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xbtn_SessionSelect.Label" xml:space="preserve">
+    <value>Session</value>
+  </data>
+  <data name="xbtn_SessionSelect.ScreenTip" xml:space="preserve">
+    <value>Collect list of sessions</value>
+  </data>
+  <data name="xbtn_SessionSelect.Tag" xml:space="preserve">
+    <value>xtag_SessionSAP</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionSelect.Name" xml:space="preserve">
+    <value>xbtn_SessionSelect</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionSelect.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionSelect.Parent" xml:space="preserve">
+    <value>xgrp_Session</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionSelect.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xbtn_SessionOptions.Label" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="xbtn_SessionOptions.ScreenTip" xml:space="preserve">
+    <value>Configure Worksheet BDC Settings</value>
+  </data>
+  <data name="xbtn_SessionOptions.Tag" xml:space="preserve">
+    <value>xtag_SessionOptions</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionOptions.Name" xml:space="preserve">
+    <value>xbtn_SessionOptions</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionOptions.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionOptions.Parent" xml:space="preserve">
+    <value>xgrp_Session</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionOptions.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="xbtn_SessionConfigure.Label" xml:space="preserve">
+    <value>Config</value>
+  </data>
+  <data name="xbtn_SessionConfigure.ScreenTip" xml:space="preserve">
+    <value>Configure Worksheet BDC Settings</value>
+  </data>
+  <data name="xbtn_SessionConfigure.Tag" xml:space="preserve">
+    <value>xtag_SessionConfigure</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionConfigure.Name" xml:space="preserve">
+    <value>xbtn_SessionConfigure</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionConfigure.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionConfigure.Parent" xml:space="preserve">
+    <value>xgrp_Session</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionConfigure.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="xbtn_SessionBlank.Label" xml:space="preserve">
+    <value>Blank</value>
+  </data>
+  <data name="xbtn_SessionBlank.ScreenTip" xml:space="preserve">
+    <value>Create blank data Worksheet</value>
+  </data>
+  <data name="xbtn_SessionBlank.Tag" xml:space="preserve">
+    <value>xtag_SessionBlank</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionBlank.Name" xml:space="preserve">
+    <value>xbtn_SessionBlank</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionBlank.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionBlank.Parent" xml:space="preserve">
+    <value>xgrp_Session</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SessionBlank.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="xgrp_Session.Label" xml:space="preserve">
+    <value>SAP Sessions</value>
+  </data>
+  <data name="&gt;&gt;xgrp_Session.Name" xml:space="preserve">
+    <value>xgrp_Session</value>
+  </data>
+  <data name="&gt;&gt;xgrp_Session.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xgrp_Session.Parent" xml:space="preserve">
+    <value>xTab_SAPtor</value>
+  </data>
+  <data name="&gt;&gt;xgrp_Session.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="xbtn_ProcessSelection.Label" xml:space="preserve">
+    <value>Process</value>
+  </data>
+  <data name="xbtn_ProcessSelection.ScreenTip" xml:space="preserve">
+    <value>Process selection</value>
+  </data>
+  <data name="xbtn_ProcessSelection.Tag" xml:space="preserve">
+    <value>xtag_ProcessSelection</value>
+  </data>
+  <data name="&gt;&gt;xbtn_ProcessSelection.Name" xml:space="preserve">
+    <value>xbtn_ProcessSelection</value>
+  </data>
+  <data name="&gt;&gt;xbtn_ProcessSelection.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_ProcessSelection.Parent" xml:space="preserve">
+    <value>xgrp_Process</value>
+  </data>
+  <data name="&gt;&gt;xbtn_ProcessSelection.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xbtn_BDCOptions.Label" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="xbtn_BDCOptions.ScreenTip" xml:space="preserve">
+    <value>Configure BDC Processing</value>
+  </data>
+  <data name="xbtn_BDCOptions.Tag" xml:space="preserve">
+    <value>xtag_BDCOptions</value>
+  </data>
+  <data name="&gt;&gt;xbtn_BDCOptions.Name" xml:space="preserve">
+    <value>xbtn_BDCOptions</value>
+  </data>
+  <data name="&gt;&gt;xbtn_BDCOptions.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_BDCOptions.Parent" xml:space="preserve">
+    <value>xgrp_Process</value>
+  </data>
+  <data name="&gt;&gt;xbtn_BDCOptions.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="xbtn_BDCTest.Label" xml:space="preserve">
+    <value>Single</value>
+  </data>
+  <data name="xbtn_BDCTest.ScreenTip" xml:space="preserve">
+    <value>Run one transaction in foreground</value>
+  </data>
+  <data name="xbtn_BDCTest.Tag" xml:space="preserve">
+    <value>xtag_BDCTest</value>
+  </data>
+  <data name="&gt;&gt;xbtn_BDCTest.Name" xml:space="preserve">
+    <value>xbtn_BDCTest</value>
+  </data>
+  <data name="&gt;&gt;xbtn_BDCTest.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_BDCTest.Parent" xml:space="preserve">
+    <value>xgrp_Process</value>
+  </data>
+  <data name="&gt;&gt;xbtn_BDCTest.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="xbtn_ProcessRunner.Label" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="xbtn_ProcessRunner.ScreenTip" xml:space="preserve">
+    <value>Process runner monitor</value>
+  </data>
+  <data name="xbtn_ProcessRunner.Tag" xml:space="preserve">
+    <value>xtag_ProcessRunner</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="xbtn_ProcessRunner.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;xbtn_ProcessRunner.Name" xml:space="preserve">
+    <value>xbtn_ProcessRunner</value>
+  </data>
+  <data name="&gt;&gt;xbtn_ProcessRunner.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_ProcessRunner.Parent" xml:space="preserve">
+    <value>xgrp_Process</value>
+  </data>
+  <data name="&gt;&gt;xbtn_ProcessRunner.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="xgrp_Process.Label" xml:space="preserve">
+    <value>Processing</value>
+  </data>
+  <data name="&gt;&gt;xgrp_Process.Name" xml:space="preserve">
+    <value>xgrp_Process</value>
+  </data>
+  <data name="&gt;&gt;xgrp_Process.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xgrp_Process.Parent" xml:space="preserve">
+    <value>xTab_SAPtor</value>
+  </data>
+  <data name="&gt;&gt;xgrp_Process.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="RibbonDropDownItemImpl1.Label" xml:space="preserve">
+    <value>Connection Monitor</value>
+  </data>
+  <data name="RibbonDropDownItemImpl1.ScreenTip" xml:space="preserve">
+    <value>Show connection monitor</value>
+  </data>
+  <data name="RibbonDropDownItemImpl2.Label" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="RibbonDropDownItemImpl2.ScreenTip" xml:space="preserve">
+    <value>Show log window</value>
+  </data>
+  <data name="RibbonDropDownItemImpl3.Label" xml:space="preserve">
+    <value>Notification Options</value>
+  </data>
+  <data name="RibbonDropDownItemImpl3.ScreenTip" xml:space="preserve">
+    <value>Set notification options</value>
+  </data>
+  <data name="xgal_Services.Label" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="&gt;&gt;xgal_Services.Name" xml:space="preserve">
+    <value>xgal_Services</value>
+  </data>
+  <data name="&gt;&gt;xgal_Services.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GalleryView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xgal_Services.Parent" xml:space="preserve">
+    <value>xgrp_Services</value>
+  </data>
+  <data name="&gt;&gt;xgal_Services.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RibbonDropDownItemImpl4.Label" xml:space="preserve">
+    <value> About SAP</value>
+  </data>
+  <data name="RibbonDropDownItemImpl5.Label" xml:space="preserve">
+    <value>About NCO</value>
+  </data>
+  <data name="xgal_About.Label" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="&gt;&gt;xgal_About.Name" xml:space="preserve">
+    <value>xgal_About</value>
+  </data>
+  <data name="&gt;&gt;xgal_About.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GalleryView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xgal_About.Parent" xml:space="preserve">
+    <value>xgrp_Services</value>
+  </data>
+  <data name="&gt;&gt;xgal_About.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="xgrp_Services.Label" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="&gt;&gt;xgrp_Services.Name" xml:space="preserve">
+    <value>xgrp_Services</value>
+  </data>
+  <data name="&gt;&gt;xgrp_Services.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xgrp_Services.Parent" xml:space="preserve">
+    <value>xTab_SAPtor</value>
+  </data>
+  <data name="&gt;&gt;xgrp_Services.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="xbtn_SAPGUIOptions.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="xbtn_SAPGUIOptions.Label" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="xbtn_SAPGUIOptions.ScreenTip" xml:space="preserve">
+    <value>Set SAPGUI Options</value>
+  </data>
+  <data name="xbtn_SAPGUIOptions.Tag" xml:space="preserve">
+    <value>xtag_SAPGUIOptions</value>
+  </data>
+  <data name="xbtn_SAPGUIOptions.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPGUIOptions.Name" xml:space="preserve">
+    <value>xbtn_SAPGUIOptions</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPGUIOptions.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPGUIOptions.Parent" xml:space="preserve">
+    <value>xGrp_AboutHelp</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPGUIOptions.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xbtn_SAPConnectStatus.Label" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="xbtn_SAPConnectStatus.ScreenTip" xml:space="preserve">
+    <value>Configure SAPGUI setup</value>
+  </data>
+  <data name="xbtn_SAPConnectStatus.Tag" xml:space="preserve">
+    <value>xtag_SAPLogonConnect</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPConnectStatus.Name" xml:space="preserve">
+    <value>xbtn_SAPConnectStatus</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPConnectStatus.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPConnectStatus.Parent" xml:space="preserve">
+    <value>xGrp_AboutHelp</value>
+  </data>
+  <data name="&gt;&gt;xbtn_SAPConnectStatus.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="xbtn_ServicesOptions.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="xbtn_ServicesOptions.Label" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="xbtn_ServicesOptions.ScreenTip" xml:space="preserve">
+    <value>Configure BDC Processing</value>
+  </data>
+  <data name="xbtn_ServicesOptions.Tag" xml:space="preserve">
+    <value>xtag_ServicesOptions</value>
+  </data>
+  <data name="xbtn_ServicesOptions.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;xbtn_ServicesOptions.Name" xml:space="preserve">
+    <value>xbtn_ServicesOptions</value>
+  </data>
+  <data name="&gt;&gt;xbtn_ServicesOptions.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xbtn_ServicesOptions.Parent" xml:space="preserve">
+    <value>xGrp_AboutHelp</value>
+  </data>
+  <data name="&gt;&gt;xbtn_ServicesOptions.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="xGrp_AboutHelp.Label" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="&gt;&gt;xGrp_AboutHelp.Name" xml:space="preserve">
+    <value>xGrp_AboutHelp</value>
+  </data>
+  <data name="&gt;&gt;xGrp_AboutHelp.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xGrp_AboutHelp.Parent" xml:space="preserve">
+    <value>xTab_SAPtor</value>
+  </data>
+  <data name="&gt;&gt;xGrp_AboutHelp.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="xTab_SAPtor.Label" xml:space="preserve">
+    <value>xSAPtor</value>
+  </data>
+  <data name="&gt;&gt;xTab_SAPtor.Name" xml:space="preserve">
+    <value>xTab_SAPtor</value>
+  </data>
+  <data name="&gt;&gt;xTab_SAPtor.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;xSAPtorRB.OfficeMenu.Name" xml:space="preserve">
+    <value>xSAPtorRB.OfficeMenu</value>
+  </data>
+  <data name="&gt;&gt;xSAPtorRB.OfficeMenu.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;xSAPtorRB.OfficeMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;xSAPtorRB.OfficeMenu.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>xSAPtorRB</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GenericRibbonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

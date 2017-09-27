@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A4225B39-A5D8-4793-B1E6-25F6F7C2DD1D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>xSAPtorConfig</RootNamespace>
+    <AssemblyName>xSAPtorConfig</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>xSAPtorConfig.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>xSAPtorConfig.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\Controllers\Controller.vb" />
+    <Compile Include="Model\Controller\ConfigDTO.vb" />
+    <Compile Include="Model\Controller\iConfigDTO.vb" />
+    <Compile Include="Model\Logon\Connection Setup\iLogonConnSetupDTO.vb" />
+    <Compile Include="Model\Logon\Connection Setup\LogonConnSetupDTO.vb" />
+    <Compile Include="Model\Logon\Connections\i1LogonConnectionDTO.vb" />
+    <Compile Include="Model\Logon\Connections\i0LogonConnReposDTO.vb" />
+    <Compile Include="Model\Logon\Connections\1LogonConnectionDTO.vb" />
+    <Compile Include="Model\Logon\Connections\0LogonConnReposDTO.vb" />
+    <Compile Include="Model\Logon\Options\LogonOptionsDTO.vb" />
+    <Compile Include="Model\Logon\Systems\Languages\iSysLanguagesDTO.vb" />
+    <Compile Include="Model\Logon\Systems\Languages\SysLanguagesDTO.vb" />
+    <Compile Include="Model\Logon\Systems\Logons\iSysLogon1DTO.vb" />
+    <Compile Include="Model\Logon\Systems\Logons\iSysLogon0ReposDTO.vb" />
+    <Compile Include="Model\Logon\Systems\Logons\SysLogon1DTO.vb" />
+    <Compile Include="Model\Logon\Systems\Logons\SysLogon0ReposDTO.vb" />
+    <Compile Include="Model\Logon\Systems\Repository\iSysRepos0DTO.vb" />
+    <Compile Include="Model\Logon\Systems\Repository\iSysRepos1SystemDTO.vb" />
+    <Compile Include="Model\Logon\Systems\Repository\iSysRepos2ClientDTO.vb" />
+    <Compile Include="Model\Logon\Systems\Repository\iSysRepos3UserDTO.vb" />
+    <Compile Include="Model\Logon\Systems\Repository\SysRepos0DTO.vb" />
+    <Compile Include="Model\Logon\Systems\Repository\SysRepos1SystemDTO.vb" />
+    <Compile Include="Model\Logon\Systems\Repository\SysRepos2ClientDTO.vb" />
+    <Compile Include="Model\Logon\Systems\Repository\SysRepos3UserDTO.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Model\Logon\Options\iLogonOptionsDTO.vb" />
+    <Compile Include="Controller\Controllers\iController.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xSAPtorUtilities\xSAPtorUtilities.vbproj">
+      <Project>{e61c9c5a-368d-4a63-80bd-8b68ba79b441}</Project>
+      <Name>xSAPtorUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
