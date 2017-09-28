@@ -684,12 +684,6 @@
     <None Include="Resources\About.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BxS\BxS\BxSNCO.vbproj">
-      <Project>{7b76e0ee-42e1-413d-bd3d-12faf0b39e6c}</Project>
-      <Name>BxSNCO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Pantone.png" />
   </ItemGroup>
   <ItemGroup>
@@ -813,6 +807,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BxS\BxS\BxSNCO.vbproj">
+      <Project>{7b76e0ee-42e1-413d-bd3d-12faf0b39e6c}</Project>
+      <Name>BxSNCO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -833,7 +833,7 @@
     <ManifestKeyFile>xSAPtorExcel_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>E146CA7ACDE0CEFC6DF83048F8A8B3EB38A5D7EB</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>BB04311EC37EDE78C498E81D0A093F398B8A5AA4</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <PlatformTarget>x64</PlatformTarget>

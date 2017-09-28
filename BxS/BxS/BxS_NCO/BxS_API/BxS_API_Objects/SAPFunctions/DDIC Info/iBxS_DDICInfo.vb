@@ -1,16 +1,15 @@
 ﻿Imports System.Threading
-
-Imports BxS.SAPFunctions.DDIC
 '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-Namespace API.SAPFunctions.ZDTON
+Namespace API.SAPFunctions.DDIC
 
-	Public Interface iBxS_DDICInfo
+	Public Interface IBxS_DDICInfo
 
 		#Region "Methods"
 
-			Function GetDTO()																															As iBxS_DDICInfo_DTO
-			Function GetDDICInfo(	ByVal DTO						As iBxS_ZDTON_DTO			,
-																ByVal CancelToken		As	CancellationToken		)				As Task(Of Boolean )
+			Function BuildDTO()	As IBxS_DDICInfo_DTO
+
+			Function GetDDICInfo(	ByVal DTO						As	IBxS_DDICInfo_DTO	,
+														ByVal CancelToken		As	CancellationToken		)		As Task(Of Boolean )
 			'....................................................
 			Sub Reset()
 

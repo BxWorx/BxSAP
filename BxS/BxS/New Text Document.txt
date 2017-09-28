@@ -1,0 +1,78 @@
+FUNCTION ddif_fieldinfo_get .
+*"----------------------------------------------------------------------
+*"*"Lokale Schnittstelle:
+*"  IMPORTING
+*"     VALUE(TABNAME) TYPE  DDOBJNAME
+*"     VALUE(FIELDNAME) TYPE  DFIES-FIELDNAME DEFAULT ' '
+*"     VALUE(LANGU) TYPE  SY-LANGU DEFAULT SY-LANGU
+*"     VALUE(LFIELDNAME) TYPE  DFIES-LFIELDNAME DEFAULT ' '
+*"     VALUE(ALL_TYPES) TYPE  DDBOOL_D DEFAULT ' '
+*"     VALUE(GROUP_NAMES) TYPE  DDBOOL_D DEFAULT ' '
+*"     VALUE(UCLEN) TYPE  UNICODELG OPTIONAL
+*"     VALUE(DO_NOT_WRITE) TYPE  DDBOOL_D DEFAULT ' '
+*"  EXPORTING
+*"     VALUE(X030L_WA) TYPE  X030L
+*"     VALUE(DDOBJTYPE) TYPE  DD02V-TABCLASS
+*"     VALUE(DFIES_WA) TYPE  DFIES
+*"     VALUE(LINES_DESCR) TYPE  DDTYPELIST
+*"  TABLES
+*"      DFIES_TAB STRUCTURE  DFIES OPTIONAL
+*"      FIXED_VALUES TYPE  DDFIXVALUES OPTIONAL
+*"  EXCEPTIONS
+*"      NOT_FOUND
+*"      INTERNAL_ERROR
+
+
+
+DFIES                          Active
+DD Interface: Table Fields for DDIF_FIELDINFO_GET
+
+TABNAME	Types	TABNAME	CHAR	30	0	Table Name
+FIELDNAME	Types	FIELDNAME	CHAR	30	0	Field Name
+LANGU	Types	DDLANGUAGE	LANG	1	0	Language Key
+POSITION	Types	TABFDPOS	NUMC	4	0	Position of the field in the table
+OFFSET	Types	DOFFSET	NUMC	6	0	Offset of a field
+DOMNAME	Types	DOMNAME	CHAR	30	0	Domain name
+ROLLNAME	Types	ROLLNAME	CHAR	30	0	Data element (semantic domain)
+CHECKTABLE	Types	TABNAME	CHAR	30	0	Table Name
+LENG	Types	DDLENG	NUMC	6	0	Length (No. of Characters)
+INTLEN	Types	INTLEN	NUMC	6	0	Internal Length in Bytes
+OUTPUTLEN	Types	OUTPUTLEN	NUMC	6	0	Output Length
+DECIMALS	Types	DECIMALS	NUMC	6	0	Number of Decimal Places
+DATATYPE	Types	DYNPTYPE	CHAR	4	0	ABAP/4 Dictionary: Screen data type for Screen Painter
+INTTYPE	Types	INTTYPE	CHAR	1	0	ABAP data type (C,D,N,...)
+REFTABLE	Types	REFTABLE	CHAR	30	0	Table for reference field
+REFFIELD	Types	REFFIELD	CHAR	30	0	Reference field for currency and qty fields
+PRECFIELD	Types	PRECFIELD	CHAR	30	0	Name of included table
+AUTHORID	Types	AUTHORID	CHAR	3	0	Authorization class
+MEMORYID	Types	MEMORYID	CHAR	20	0	Set/Get parameter ID
+LOGFLAG	Types	LOGFLAG	CHAR	1	0	Indicator for writing change documents
+MASK	Types	AS4MASK	CHAR	20	0	Template (not used)
+MASKLEN	Types	MASKLEN	NUMC	4	0	Template length (not used)
+CONVEXIT	Types	CONVEXIT	CHAR	5	0	Conversion Routine
+HEADLEN	Types	HEADLEN	NUMC	2	0	Maximum length of heading
+SCRLEN1	Types	SCRLEN_S	NUMC	2	0	Max. length for short field label
+SCRLEN2	Types	SCRLEN_M	NUMC	2	0	Max. length for medium field label
+SCRLEN3	Types	SCRLEN_L	NUMC	2	0	Max. length for long field label
+FIELDTEXT	Types	AS4TEXT	CHAR	60	0	Short Description of Repository Objects
+REPTEXT	Types	REPTEXT	CHAR	55	0	Heading
+SCRTEXT_S	Types	SCRTEXT_S	CHAR	10	0	Short Field Label
+SCRTEXT_M	Types	SCRTEXT_M	CHAR	20	0	Medium Field Label
+SCRTEXT_L	Types	SCRTEXT_L	CHAR	40	0	Long Field Label
+KEYFLAG	Types	KEYFLAG	CHAR	1	0	Identifies a key field of a table
+LOWERCASE	Types	LOWERCASE	CHAR	1	0	Lowercase letters allowed/not allowed
+MAC	Types	DDSHATTACH	CHAR	1	0	Flag if search help is attached to the field
+GENKEY	Types	AS4FLAG	CHAR	1	0	Flag (X or Blank)
+NOFORKEY	Types	AS4FLAG	CHAR	1	0	Flag (X or Blank)
+VALEXI	Types	VALEXI	CHAR	1	0	Existence of fixed values
+NOAUTHCH	Types	AS4FLAG	CHAR	1	0	Flag (X or Blank)
+SIGN	Types	SIGNFLAG	CHAR	1	0	Flag for sign in numerical fields
+DYNPFLD	Types	DYNPROFLD	CHAR	1	0	Flag: field to be displayed on the screen
+F4AVAILABL	Types	DDF4AVAIL	CHAR	1	0	Does the field have an input help
+COMPTYPE	Types	COMPTYPE	CHAR	1	0	DD: Component Type
+LFIELDNAME	Types	FNAM_____4	CHAR	132	0	Field name
+LTRFLDDIS	Types	DDLTRFLDDI	CHAR	1	0	Basic write direction has been defined LTR (left-to-right)
+BIDICTRLC	Types	DDBIDICTRL	CHAR	1	0	DD: No Filtering of BIDI Formatting Characters
+OUTPUTSTYLE	Types	OUTPUTSTYLE	NUMC	2	0	DD: Output Style (Output Style) for Decfloat Types
+NOHISTORY	Types	DDNOHISTORY	CHAR	1	0	DD: Flag for Deactivating Input History in Screen Field
+AMPMFORMAT	Types	DDAMPMFORMAT	CHAR	1	0	DD: Indicator whether AM/PM time format is required

@@ -1,7 +1,5 @@
-﻿Imports System.Threading
-Imports SAPNCO = SAP.Middleware.Connector
+﻿Imports SAPNCO = SAP.Middleware.Connector
 Imports BxS.API.Destination
-Imports BxS.API.SAPFunctions.ZDTON
 '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 Namespace SAPFunctions.ZDTON
 

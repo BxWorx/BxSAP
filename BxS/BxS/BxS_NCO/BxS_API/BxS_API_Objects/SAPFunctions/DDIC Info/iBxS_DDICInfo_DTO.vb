@@ -1,26 +1,22 @@
-﻿Imports BxS.SAPFunctions.ZDTON
-'••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+﻿'••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 Namespace API.SAPFunctions.DDIC
 
-	Public Interface iBxS_DDICInfoTable_DTO
+	Public Interface IBxS_DDICInfo_DTO
 
 		#Region "Declarations"
-			
-		
-
-
 		#End Region
 		'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 		#Region "Properties"
 		
-			Property	Tables	As Dictionary(Of String, iBxS_DDICInfoTable_DTO)
+			Property TableList	As IList(Of String)
+			'Property	Tables	As Dictionary(Of String, iBxS_DDICInfoTable_DTO)
 
 		#End Region
 		'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 		#Region "Methods"
 
 			Sub	Reset()
-			Sub AddTable(ByVal TableName	As String)
+			Sub AddTableName(ByVal Name	As String)
 
 		#End Region
 

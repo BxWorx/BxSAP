@@ -6,6 +6,7 @@ Imports BxS.API.SAPFunctions.ZDTON
 Imports BxS.Utilities
 '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 Namespace SAPFunctions.ZDTON
+
 	Friend Class BxS_ZDTON
 								Implements iBxS_ZDTON
 
@@ -107,7 +108,7 @@ Namespace SAPFunctions.ZDTON
 			'........................................................................
 			Private	co_Profile				As	Lazy(Of iBxS_ZDTON_Profile)	_
 																			= New	Lazy(Of iBxS_ZDTON_Profile)(
-																					Function()	Me.co_CntlrSAPFnc.GetZDTONProfile,
+																					Function()	Me.co_CntlrSAPFnc.GetZDTONProfile(),
 																					LazyThreadSafetyMode.ExecutionAndPublication )
 
 			Private co_RfcHead				As	Lazy(Of iBxS_ZDTONHeader)	_

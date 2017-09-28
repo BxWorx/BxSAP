@@ -10,7 +10,6 @@ Namespace SAPFunctions.ZDTON
 			ReadOnly	Property	rfcDestination			As	iBxSDestination
 			ReadOnly	Property	RfcFncParmIndex			As	iBxS_ZDTONMsgs_ParmIndex
 
-
 			Function	CreateDTO()		As	iBxS_ZDTONMsgs_DTO
 
 	End Interface

@@ -1,7 +1,11 @@
 ﻿Imports	BxS.API.SAPFunctions.MsgComposer
 Imports	BxS.API.SAPFunctions.BDCTransaction
 Imports	BxS.API.SAPFunctions.ZDTON
+Imports	BxS.API.SAPFunctions.DDIC
+
 Imports BxS.SAPFunctions.ZDTON
+Imports BxS.SAPFunctions.DDIC
+
 Imports BxS.Utilities
 '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 Namespace	SAPFunctions
@@ -16,7 +20,11 @@ Namespace	SAPFunctions
 		Function	GetZDTONDataExec()	As iBxS_Executioner(Of iBxS_ZDTONData_DTO)
 		Function	GetZDTONStats()			As iBxS_ZDTONStats
 		Function	GetZDTONMsgs()			As iBxS_ZDTONMsgs
-		Function	CreateZDTONDTO()		As	iBxS_ZDTON_DTO
+		Function	CreateZDTONDTO()		As iBxS_ZDTON_DTO
+		'..........................................................................
+		Function  GetDDICInfoProfile()	As IBxS_DDICInfo_Profile
+		Function  BuildDDICInfo_DTO()		As IBxS_DDICInfo_DTO
+		Function	BuildDDICInfo()				As IBxS_DDICInfo
 		'..........................................................................
 		Function	GetBDCTransaction()	As iBxS_BDCTran_Caller
 		Function	GetMsgCompser()			As iBxS_SAPMsgComposer

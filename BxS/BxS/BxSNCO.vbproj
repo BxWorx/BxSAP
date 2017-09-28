@@ -167,7 +167,10 @@
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_DDICInfo\BxS_DDICInfoFields_DTO.vb" />
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_DDICInfo\BxS_DDICInfo_Profile.vb" />
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_DDICInfo\BxS_DDICInfo_DTO.vb" />
+    <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_DDICInfo\BxS_DDICInfo.vb" />
+    <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_DDICInfo\BxS_DDICInfo_ParmIndex.vb" />
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_DDICInfo\iBxS_DDICInfo_Profile.vb" />
+    <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_DDICInfo\iBxS_DDICInfo_ParmIndex.vb" />
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_MsgComposer\BxS_MsgComposer.vb" />
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_MsgComposer\BxS_MsgComposer_ParmIndex.vb" />
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_MsgComposer\BxS_MsgComposer_Profile.vb" />

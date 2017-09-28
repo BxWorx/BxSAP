@@ -1,5 +1,6 @@
 ﻿Imports SAPNCO = SAP.Middleware.Connector
 
+Imports	BxS.API.SAPFunctions.DDIC
 Imports	BxS.API.SAPFunctions.ZDTON
 Imports	BxS.API.SAPFunctions.BDCTransaction
 Imports BxS.API.SAPFunctions.MsgComposer
@@ -27,6 +28,12 @@ Namespace API.Main
 
 
 
+		#Region "Methods: DDIC"
+
+			Function BuildDDICInfo(ByVal rfcDestID	As String)	As IBxS_DDICInfo
+
+		#End Region
+		'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 		#Region "Methods: ZDTON"
 
 			Function	GetZDTONTransaction(ByVal rfcDestID	As String)	As iBxS_ZDTON
@@ -91,8 +98,8 @@ Namespace API.Main
 		'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 		#Region "Methods: Other"
 
-			Function GetMsgComposer(ByVal rfcDestID	As String)						As iBxS_SAPMsgComposer
-			Function Get_About()						As iBxSNCOAboutInfo
+			Function GetMsgComposer(ByVal rfcDestID	As String)	As iBxS_SAPMsgComposer
+			Function Get_About()																As iBxSNCOAboutInfo
 
 		#End Region
 

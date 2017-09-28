@@ -7,7 +7,7 @@ Namespace API.SAPFunctions.DDIC
 		#Region "Properties"
 		
 			Property	TableName		As String
-			Property	FieldDesc			As Dictionary(Of String, ib)
+			'Property	FieldDesc			As Dictionary(Of String, ib)
 
 		#End Region
 		'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯

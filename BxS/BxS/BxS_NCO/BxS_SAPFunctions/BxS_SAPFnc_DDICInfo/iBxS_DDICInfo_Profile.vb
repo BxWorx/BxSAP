@@ -1,14 +1,15 @@
 ﻿Imports SAPNCO = SAP.Middleware.Connector
 
 Imports BxS.API.Destination
-Imports BxS.API.SAPFunctions.ZDTON
 '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-Namespace SAPFunctions.ZDTON
+Namespace SAPFunctions.DDIC
 
-	Friend Interface iBxS_DDICInfo_Profile
+	Friend Interface IBxS_DDICInfo_Profile
 
-		ReadOnly	Property SAPrfcDestination	As SAPNCO.RfcCustomDestination
-		ReadOnly	Property rfcDestination			As iBxSDestination
+		ReadOnly	Property	SAPRfcFncName				As	String
+		ReadOnly	Property	SAPrfcDestination		As	SAPNCO.RfcCustomDestination
+		ReadOnly	Property	RfcDestination			As	iBxSDestination
+		ReadOnly	Property	RfcFncParmIndex			As	IBxS_DDICInfo_ParmIndex
 
 	End Interface
 

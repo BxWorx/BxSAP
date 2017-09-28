@@ -1,11 +1,17 @@
 ﻿Imports System.Threading
+
 Imports BxS.API.Destination
-Imports	BxS.SAPFunctions.MsgComposer
-Imports	BxS.SAPFunctions.BDCTransaction
-Imports	BxS.SAPFunctions.ZDTON
+
 Imports	BxS.API.SAPFunctions.MsgComposer
 Imports	BxS.API.SAPFunctions.BDCTransaction
 Imports	BxS.API.SAPFunctions.ZDTON
+Imports	BxS.API.SAPFunctions.DDIC
+
+Imports	BxS.SAPFunctions.MsgComposer
+Imports	BxS.SAPFunctions.BDCTransaction
+Imports	BxS.SAPFunctions.ZDTON
+Imports	BxS.SAPFunctions.DDIC
+
 Imports BxS.Utilities
 '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 Namespace	SAPFunctions
@@ -16,12 +22,17 @@ Namespace	SAPFunctions
 		#Region "Definitions"
 
 			Private co_BxSDest							As iBxSDestination
-
+			'............................................................................................
+			Private	co_DDICInfo_Profile			As	Lazy(Of IBxS_DDICInfo_Profile) _
+																						= New Lazy(Of IBxS_DDICInfo_Profile)(
+																								Function()	New	BxS_DDICInfo_Profile(Me.co_BxSDest),
+																								LazyThreadSafetyMode.ExecutionAndPublication )
+			'............................................................................................
 			Private	co_MsgComposer_Profile	As	Lazy(Of iBxS_MsgComposer_Profile) _
 																						= New Lazy(Of iBxS_MsgComposer_Profile)(
 																								Function()	New	BxS_MsgComposer_Profile(Me.co_BxSDest),
 																								LazyThreadSafetyMode.ExecutionAndPublication )
-
+			'............................................................................................
 			Private	co_BDCTran_Profile			As	Lazy(Of iBxS_BDCTran_Profile) _
 																						= New Lazy(Of iBxS_BDCTran_Profile)(
 																								Function()	New	BxS_BDCTran_Profile(Me.co_BxSDest),
@@ -129,6 +140,33 @@ Namespace	SAPFunctions
 			End Function
 			'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 			'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
+			'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+			Friend	Function	GetDDICInfoProfile() As IBxS_DDICInfo_Profile _
+													Implements iBxS_SAPFnc_Controller.GetDDICInfoProfile
+
+				Return	Me.co_DDICInfo_Profile.Value
+
+			End Function
+
+			'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+			Friend	Function	BuildDDICInfo() As IBxS_DDICInfo _
+													Implements iBxS_SAPFnc_Controller.BuildDDICInfo
+
+				Return	New BxS_DDICInfo(Me)
+
+			End Function
+			'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+			Friend	Function	BuildDDICInfo_DTO() As IBxS_DDICInfo_DTO _
+													Implements iBxS_SAPFnc_Controller.BuildDDICInfo_DTO
+
+				Return	New BxS_DDICInfo_DTO()
+
+			End Function
+
+			'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+			'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
 			'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 			Friend	Function	GetBDCTransaction() As iBxS_BDCTran_Caller _
 													Implements iBxS_SAPFnc_Controller.GetBDCTransaction

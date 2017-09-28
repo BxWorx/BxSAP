@@ -1,6 +1,7 @@
 ﻿Imports SAPNCO = SAP.Middleware.Connector
 
 Imports BxS.API.SAPFunctions.Helpers
+Imports	BxS.API.SAPFunctions.DDIC
 Imports	BxS.API.SAPFunctions.ZDTON
 Imports	BxS.API.SAPFunctions.BDCTransaction
 Imports BxS.API.SAPFunctions.MsgComposer
@@ -195,6 +196,18 @@ Namespace API.Main
 		#End Region
 
 
+		'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+		#Region "Methods: DDIC"
+
+			'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+			Public	Function	BuildDDICInfo(ByVal rfcDestID	As String) As IBxS_DDICInfo _
+													Implements ixNCOController.BuildDDICInfo
+			
+				Return	Me.GetSAPFncController(rfcDestID).BuildDDICInfo()
+
+			End Function
+
+		#End Region
 		'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 		#Region "Methods: ZDTON"
 

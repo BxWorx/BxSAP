@@ -1,54 +1,33 @@
-﻿'Imports BxS.SAPFunctions.
+﻿Imports BxS.API.SAPFunctions.DDIC
 '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-Namespace API.SAPFunctions.DDIC
+Namespace SAPFunctions.DDIC
 
 	Friend	Class	BxS_DDICInfo_DTO
-									Implements 	iBxS_DDICInfoTable_DTO
+									Implements 	IBxS_DDICInfo_DTO
 
 		#Region "Declarations"
-			Private 
-			Private	ct_Tables		As Dictionary(Of 
-
 		#End Region
 		'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 		#Region "Properties"
 
-			Friend	Property	TableName		As String														Implements	iBxS_DDICInfoTable_DTO.TableName
-			Friend	Property	FieldDesc		As Dictionary(Of String, String)		Implements	iBxS_DDICInfoTable_DTO.FieldDesc
+			Friend	Property	TableList		As IList(Of String)		Implements	IBxS_DDICInfo_DTO.TableList
 
 		#End Region
 		'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 		#Region "Methods"
 
 			'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
-			Friend  Sub	Reset() Implements iBxS_DDICInfoTable_DTO.Reset
-				
-				Me.FieldDesc.Clear()
+			Friend  Sub AddTableName(ByVal Name	As String)	Implements	IBxS_DDICInfo_DTO.AddTableName
+
+				If Not Me.TableList.Contains(Name)	Then	Me.TableList.Add(Name)
 
 			End Sub
 			'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
-			Friend	Function	CreateColumnDTO()	As iBxS_ZDTONColumns_DTO _
-													Implements iBxS_ZDTON_DTO.CreateColumnDTO
+			Friend  Sub	Reset() Implements IBxS_DDICInfo_DTO.Reset
+				
+				Me.TableList.Clear()
 
-				Return	New	BxS_ZDTONColumns_DTO()
-				'Return	Me.co_ColDTO.ShallowCopy()
-
-			End Function
-			'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
-			Friend	Function	CreateDataDTO()		As iBxS_ZDTONData_DTO _
-													Implements iBxS_ZDTON_DTO.CreateDataDTO
-
-				Return	New	BxS_ZDTONData_DTO()
-				'Return	Me.co_DataDTO.ShallowCopy()
-
-			End Function
-			''¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
-			'Friend	Function	ShallowCopy()		As iBxS_ZDTON_DTO _
-			'										Implements iBxS_ZDTON_DTO.ShallowCopy
-
-			'	Return DirectCast(Me.MemberwiseClone(), iBxS_ZDTON_DTO)
-
-			'End Function
+			End Sub
 
 		#End Region
 		'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
@@ -57,7 +36,7 @@ Namespace API.SAPFunctions.DDIC
 			'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 			Friend	Sub	New()
 
-				Me.FieldDesc			= New Dictionary(Of String, String)
+				Me.TableList	= New List(Of String)
 
 			End Sub
 
