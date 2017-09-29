@@ -150,13 +150,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\xSAPtorExcel\xSAPtorExcel.vbproj">
-      <Project>{b6b547d8-b27f-4500-ac83-3093ea577530}</Project>
-      <Name>xSAPtorExcel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\BxS\BxS\BxSNCO.vbproj">
       <Project>{7b76e0ee-42e1-413d-bd3d-12faf0b39e6c}</Project>
       <Name>BxSNCO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\xSAPtorExcel\xSAPtorExcel.vbproj">
+      <Project>{b6b547d8-b27f-4500-ac83-3093ea577530}</Project>
+      <Name>xSAPtorExcel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
