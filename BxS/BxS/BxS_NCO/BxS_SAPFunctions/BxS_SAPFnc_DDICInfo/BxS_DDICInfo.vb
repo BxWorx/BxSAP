@@ -1,5 +1,5 @@
 ﻿Imports System.Threading
-
+Imports BxS.API.SAPFunctions.DDIC
 Imports SAPNCO	= SAP.Middleware.Connector
 '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 Namespace SAPFunctions.DDIC
@@ -10,43 +10,64 @@ Namespace SAPFunctions.DDIC
 		#Region "Methods"
 
 			'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
-			Friend	Sub	Reset()	Implements	IBxS_DDICInfo.Reset
-				
-			End Sub
-			'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
-			Friend  Function	BuildDTO()	As IBxS_DDICInfo_DTO _
-													Implements IBxS_DDICInfo.BuildDTO
+			Friend	Async	Function	GetDDICInfoAsync(	ByVal _dto					As	IBxS_DDICInfo_DTO	,
+																								ByVal _canceltoken	As	CancellationToken		)		As Task(Of Boolean) _
+																Implements IBxS_DDICInfo.GetDDICInfoAsync
 
-				Return	Me.co_CntlrSAPFnc.BuildDDICInfo_DTO()
+				Dim lt_Def	As	SAPNCO.IRfcTable
+				Dim ls_Row	As	SAPNCO.IRfcStructure					
+				Dim lb_Ret	As	Boolean	= True
 
-			End Function
-			'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
-			Friend	Async	Function	GetDDICInfo(	ByVal _dto					As	IBxS_DDICInfo_DTO	,
-																						ByVal _canceltoken	As	CancellationToken		)		As Task(Of Boolean) _
-																Implements IBxS_DDICInfo.GetDDICInfo
+				For Each lo In _dto.TableList
 
-				Dim lb_Ret	As Boolean	= False
+					If _canceltoken.IsCancellationRequested
+						lb_Ret	=False
+						Exit For
+					End If
+					'................................................
+					Try
 
-				Await Task.Factory.StartNew( Function() True )
+						Me.co_rfcFnc.Value.SetValue(	Me.co_Profile.RfcFncParmIndex.TableName	, lo )
 
-				'Dim	lt_Msgs	As New List(Of iBxS_ZDTONMsgs_DTO)
+						Await Task.Run( Sub() co_rfcFnc.Value.Invoke(co_Profile.SAPrfcDestination), _canceltoken )
 
-				'lt_Msgs	=	Await Task(Of List(Of iBxS_ZDTONMsgs_DTO)).Factory.StartNew(
-				'								Function()	Me.co_RfcMsgs.Value.Invoke(_dto.User, _dto.SessionID),
-				'								_canceltoken )
+						If _canceltoken.IsCancellationRequested
+							lb_Ret	= False
+							Exit For
+						End If
 
-				'_dto.Msgs.Clear
+						lt_Def	= Me.co_rfcFnc.Value.GetTable(Me.co_Profile.RfcFncParmIndex.StructTable)
+						ls_Row	= lt_Def.Metadata.LineType.CreateStructure()
 
-				'If lt_Msgs.Count > 0
+						If Not lt_Def.Count.Equals(0)
+							If _dto.TableDesc.ContainsKey(lo)
 
-				'	For Each lo In lt_Msgs
-				'		_dto.Msgs.Add(lo.Rowno, lo)
-				'	Next
+								Dim lt_Desc	= _dto.TableDesc.Item(lo)
+								
+								lt_Desc.Clear()
 
-				'	lb_Ret	= True
+								For Each ls_Row	In lt_Def
+									lt_Desc.Add(ls_Row.GetValue("FIELDNAME").ToString, ls_Row.GetValue("FIELDTEXT").ToString )
+								Next
 
-				'End If
+							End If
+						End If
 
+						Catch ex  As Exception _
+							When _
+								TypeOf ex Is SAPNCO.RfcAbapException                  OrElse    ' if a standard ABAP exception is raised during execution of function module RFC_PING 
+								TypeOf ex Is SAPNCO.RfcAbapClassException             OrElse    ' if an ABAP class exception is raised during execution of function module RFC_PING 
+								TypeOf ex Is SAPNCO.RfcInvalidStateException          OrElse    ' if an invalid state is encountered (such as using an invalid destination, for instance) 
+								TypeOf ex Is SAPNCO.RfcResourceException              OrElse    ' if a required resource cannot be allocated (e.g., a client connection) due to resource restrictions 
+								TypeOf ex Is SAPNCO.RfcCommunicationException         OrElse    ' if a communication error occurs 
+								TypeOf ex Is SAPNCO.RfcCommunicationCanceledException
+
+							lb_Ret	= False
+
+					End Try
+
+				Next
+				'..................................................
 				Return	lb_Ret				
 
 			End Function

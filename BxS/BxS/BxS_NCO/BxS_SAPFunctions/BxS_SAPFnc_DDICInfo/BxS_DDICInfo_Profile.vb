@@ -1,5 +1,6 @@
-﻿Imports SAPNCO = SAP.Middleware.Connector
+﻿Imports System.Threading
 Imports BxS.API.Destination
+Imports SAPNCO = SAP.Middleware.Connector
 '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 Namespace SAPFunctions.DDIC
 
@@ -8,12 +9,39 @@ Namespace SAPFunctions.DDIC
 
 		#Region "Definitions"
 
-			Private co_RfcDest	As iBxSDestination
+			Private Const cx_SAPFncName	As String	=	"ZZ_DTO_SESSION_RETURN"
+			'............................................................
+			Private co_RfcDest					As iBxSDestination
+
+			Private co_rfcFncMetaData		As	Lazy(Of SAPNCO.RfcFunctionMetadata) _
+																				= New Lazy(Of SAPNCO.RfcFunctionMetadata)(
+																						Function()
+
+																							Try
+																									Return Me.co_RfcDest.RfcDestination.Repository.GetFunctionMetadata(cx_SAPFncName)
+																								Catch ex As Exception
+																									Return Nothing
+																							End Try
+																																									
+																						End Function,
+																						LazyThreadSafetyMode.ExecutionAndPublication )
+
+			Private co_rfcFncParmIndex  As	Lazy(Of IBxS_DDICInfo_ParmIndex) _
+																				= New Lazy(Of IBxS_DDICInfo_ParmIndex)(
+																						Function()	Me.CreateParmIndex(),
+																						LazyThreadSafetyMode.ExecutionAndPublication )
 
 		#End Region
 		'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 		#Region "Properties"
 		
+			'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+			Friend	ReadOnly	Property	SAPRfcFncName	As String _
+																		Implements	IBxS_DDICInfo_Profile.SAPRfcFncName
+				Get
+					Return cx_SAPFncName
+				End Get
+			End Property
 			'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
 			Friend	ReadOnly	Property	SAPrfcDestination()	As SAPNCO.RfcCustomDestination _
 																		Implements	IBxS_DDICInfo_Profile.SAPrfcDestination
@@ -27,6 +55,14 @@ Namespace SAPFunctions.DDIC
 																		Implements	IBxS_DDICInfo_Profile.RfcDestination
 				Get
 					Return Me.co_RfcDest
+				End Get
+
+			End Property
+			'¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+			Friend ReadOnly Property RfcFncParmIndex()	As IBxS_DDICInfo_ParmIndex _
+																Implements	IBxS_DDICInfo_Profile.RfcFncParmIndex
+				Get
+					Return Me.co_rfcFncParmIndex.Value
 				End Get
 
 			End Property
@@ -53,8 +89,10 @@ Namespace SAPFunctions.DDIC
 				Const cz_TabData	As String = "DFIES_TAB"
 
 				Dim lo_ParamIndex As IBxS_DDICInfo_ParmIndex = New BxS_DDICInfo_ParmIndex _
-							With { .Tablename		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_TabName)	,
-										 .StructTable	= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_TabData)		}
+							With	{ 
+											.Tablename		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_TabName)	,
+											.StructTable	= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_TabData)
+										}
 
 				Return lo_ParamIndex
 

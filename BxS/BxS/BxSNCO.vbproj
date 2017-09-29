@@ -105,8 +105,6 @@
     <Compile Include="BxS_NCO\BxS_API\BxS_API_Objects\Destination\iBxSDestConfig.vb" />
     <Compile Include="BxS_NCO\BxS_API\BxS_API_Objects\Destination\iBxSDestConnConfigDTO.vb" />
     <Compile Include="BxS_NCO\BxS_API\BxS_API_Objects\SAPFunctions\DDIC Info\iBxS_DDICInfo_DTO.vb" />
-    <Compile Include="BxS_NCO\BxS_API\BxS_API_Objects\SAPFunctions\DDIC Info\iBxS_DDICInfoField_DTO.vb" />
-    <Compile Include="BxS_NCO\BxS_API\BxS_API_Objects\SAPFunctions\DDIC Info\iBxS_DDICInfoTable_DTO.vb" />
     <Compile Include="BxS_NCO\BxS_API\BxS_API_Objects\SAPFunctions\iBxSSAPMsgComposer.vb" />
     <Compile Include="BxS_NCO\BxS_API\BxS_API_Objects\SAPFunctions\DDIC Info\iBxS_DDICInfo.vb" />
     <Compile Include="BxS_NCO\BxS_API\BxS_API_Objects\SAPFunctions\iBxS_ZDTON_DTO.vb" />
@@ -164,7 +162,6 @@
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_BDC\BxS_BDC_Transaction\BxS_BDC_Transaction\iBxS_BDCTran_Profile.vb" />
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_Controller\BxS_SAPFnc_Controller.vb" />
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_Controller\iBxS_SAPFnc_Controller.vb" />
-    <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_DDICInfo\BxS_DDICInfoFields_DTO.vb" />
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_DDICInfo\BxS_DDICInfo_Profile.vb" />
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_DDICInfo\BxS_DDICInfo_DTO.vb" />
     <Compile Include="BxS_NCO\BxS_SAPFunctions\BxS_SAPFnc_DDICInfo\BxS_DDICInfo.vb" />

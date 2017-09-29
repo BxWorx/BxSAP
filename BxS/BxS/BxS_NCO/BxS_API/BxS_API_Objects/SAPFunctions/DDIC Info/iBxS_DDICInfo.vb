@@ -6,12 +6,8 @@ Namespace API.SAPFunctions.DDIC
 
 		#Region "Methods"
 
-			Function BuildDTO()	As IBxS_DDICInfo_DTO
-
-			Function GetDDICInfo(	ByVal DTO						As	IBxS_DDICInfo_DTO	,
-														ByVal CancelToken		As	CancellationToken		)		As Task(Of Boolean )
-			'....................................................
-			Sub Reset()
+			Function GetDDICInfoAsync(	ByVal DTO						As	IBxS_DDICInfo_DTO	,
+																	ByVal CancelToken		As	CancellationToken		)		As Task(Of Boolean )
 
 		#End Region
 

@@ -96,19 +96,20 @@ Namespace SAPFunctions.MsgComposer
 				Const cz_Text	As String = "MESSAGE_TEXT"
 				Const cz_LTxt	As String = "LONGTEXT"
 
-				Dim lo_ParamIndex	As iBxS_MsgComposer_ParmIndex	= New BxS_MsgComposer_ParmIndex
+			Dim lo_ParamIndex As iBxS_MsgComposer_ParmIndex = New BxS_MsgComposer_ParmIndex _
+						With	{
+										.Lang	= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_Lang)	,
+										.ID		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_ID)		,
+										.No		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_No)		,
+										.V1		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_V1)		,
+										.V2		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_V2)		,
+										.V3		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_V3)		,
+										.V4		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_V4)		,
+										.Text = Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_Text)	,
+										.LTxt = Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_LTxt)
+									}
 
-				lo_ParamIndex.Lang	= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_Lang)
-				lo_ParamIndex.ID		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_ID)
-				lo_ParamIndex.No		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_No)
-				lo_ParamIndex.V1		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_V1)
-				lo_ParamIndex.V2		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_V2)
-				lo_ParamIndex.V3		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_V3)
-				lo_ParamIndex.V4		= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_V4)
-				lo_ParamIndex.Text	= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_Text)
-				lo_ParamIndex.LTxt	= Me.co_rfcFncMetaData.Value.TryNameToIndex(cz_LTxt)
-
-				Return lo_ParamIndex
+			Return lo_ParamIndex
 
 			End Function
 

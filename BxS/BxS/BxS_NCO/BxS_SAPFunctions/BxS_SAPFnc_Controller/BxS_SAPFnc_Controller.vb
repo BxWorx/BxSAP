@@ -153,7 +153,7 @@ Namespace	SAPFunctions
 			Friend	Function	BuildDDICInfo() As IBxS_DDICInfo _
 													Implements iBxS_SAPFnc_Controller.BuildDDICInfo
 
-				Return	New BxS_DDICInfo(Me)
+				Return	New BxS_DDICInfo(Me.GetDDICInfoProfile())
 
 			End Function
 			'¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯

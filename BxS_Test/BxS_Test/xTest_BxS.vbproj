@@ -150,7 +150,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BxSAP\xSAPtorExcel\xSAPtorExcel.vbproj">
+    <ProjectReference Include="..\..\xSAPtorExcel\xSAPtorExcel.vbproj">
       <Project>{b6b547d8-b27f-4500-ac83-3093ea577530}</Project>
       <Name>xSAPtorExcel</Name>
     </ProjectReference>
