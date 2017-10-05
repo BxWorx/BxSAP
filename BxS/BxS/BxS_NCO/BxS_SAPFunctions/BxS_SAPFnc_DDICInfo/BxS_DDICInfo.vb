@@ -47,7 +47,10 @@ Namespace SAPFunctions.DDIC
 								lt_Desc.Clear()
 
 								For Each ls_Row	In lt_Def
-									lt_Desc.Add(ls_Row.GetValue("FIELDNAME").ToString, ls_Row.GetValue("FIELDTEXT").ToString )
+
+									lt_Desc.Add(	ls_Row.GetValue("FIELDNAME").ToString	,
+																ls_Row.GetValue("FIELDTEXT").ToString		)
+
 								Next
 
 							End If
