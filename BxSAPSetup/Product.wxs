@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define xSAPtorExcel_TargetDir=$(var.xSAPtorExcel.TargetDir)?><?define BxSNCO_TargetDir=$(var.BxSNCO.TargetDir)?><?define xSAPtor_Config_TargetDir=$(var.xSAPtor_Config.TargetDir)?><?define xSAPtorUtilities_TargetDir=$(var.xSAPtorUtilities.TargetDir)?>
+	<Product Id="*" Name="BxSAPSetup" Language="1033" Version="1.0.0.0" Manufacturer="BxS" UpgradeCode="4d8e58fa-1ea8-4d78-ab10-1fb4f386c6ac">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="BxSAPSetup" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="ProgramFilesFolder_files" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="BxSAPSetup" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+			<Component Id="xSAPtorExcel.dll" Guid="0b458e10-27ab-43f7-88cf-f98d487539af">
+			  <File Id="xSAPtorExcel.dll" Name="xSAPtorExcel.dll" Source="$(var.xSAPtorExcel_TargetDir)xSAPtorExcel.dll" />
+			</Component>
+			<Component Id="xSAPtorExcel.dll.config" Guid="2c27f1c2-45cf-4365-a60d-d3a8b4c0c6a6">
+			  <File Id="xSAPtorExcel.dll.config" Name="xSAPtorExcel.dll.config" Source="$(var.xSAPtorExcel_TargetDir)xSAPtorExcel.dll.config" />
+			</Component>
+			<Component Id="sapnco.dll" Guid="16ca6b43-074d-46ff-910b-036473b85cfb">
+			  <File Id="sapnco.dll" Name="sapnco.dll" Source="$(var.xSAPtorExcel_TargetDir)sapnco.dll" />
+			</Component>
+			<Component Id="sapnco_utils.dll" Guid="c9bbae58-d9bd-4375-ad07-bedc92dbaa04">
+			  <File Id="sapnco_utils.dll" Name="sapnco_utils.dll" Source="$(var.xSAPtorExcel_TargetDir)sapnco_utils.dll" />
+			</Component>
+			<Component Id="BxS.dll" Guid="8fc29cdc-2a2b-4cdd-9679-4ac5423fd6a2">
+			  <File Id="BxS.dll" Name="BxS.dll" Source="$(var.BxSNCO_TargetDir)BxS.dll" />
+			</Component>
+			<Component Id="xSAPtorConfig.dll" Guid="6d5cbede-dd48-4904-afae-ca5b359c2eac">
+			  <File Id="xSAPtorConfig.dll" Name="xSAPtorConfig.dll" Source="$(var.xSAPtor_Config_TargetDir)xSAPtorConfig.dll" />
+			</Component>
+			<Component Id="xSAPtorUtilities.dll" Guid="e95ce3b2-af80-4583-a71f-413e96b7ada8">
+			  <File Id="xSAPtorUtilities.dll" Name="xSAPtorUtilities.dll" Source="$(var.xSAPtorUtilities_TargetDir)xSAPtorUtilities.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+	  <ComponentGroup Id="ProgramFilesFolder_files" Directory="ProgramFilesFolder">
+	    <Component Id="xSAPtor_Services_External_Files_gsskrb5.dll" Guid="875eee39-1201-42ae-aaf8-193e1ca14145">
+	      <File Id="xSAPtor_Services_External_Files_gsskrb5.dll" Name="gsskrb5.dll" Source="$(var.xSAPtorExcel_TargetDir)xSAPtor Services\External Files\gsskrb5.dll" />
+	    </Component>
+	    <Component Id="xSAPtor_Services_External_Files_gx64krb5.dll" Guid="f19f8d69-4199-47ba-a0d3-5f8352efd4f0">
+	      <File Id="xSAPtor_Services_External_Files_gx64krb5.dll" Name="gx64krb5.dll" Source="$(var.xSAPtorExcel_TargetDir)xSAPtor Services\External Files\gx64krb5.dll" />
+	    </Component>
+	  </ComponentGroup>
+	</Fragment>
+</Wix>
